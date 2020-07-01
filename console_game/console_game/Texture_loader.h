@@ -1,6 +1,7 @@
 #pragma once
 
 #include <fstream>
+#include "Texture.h"
 
 class Texture_loader
 {
@@ -12,8 +13,10 @@ public:
 	Texture_loader();
 	virtual ~Texture_loader();
 
-	char* load(const char* path);
-private:
+	Texture load(const char* path);
 
+private:
+	void get_header(unsigned int& animation_count, Texture_size& size) const;
+	char* get_animation_name() const;
 };
 

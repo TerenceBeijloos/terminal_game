@@ -1,13 +1,21 @@
+#animation_count 2
+#texture_width 3
+#texture_height 5
+#end
+
+#texture
  _
 [°}
 |╚┼
  ║
  ¯¯	
+#animation
  _
 [°}
 |╚┼
  |\
  ¯ ¯	
+#animation
  _
 [°}
 |╚┼
