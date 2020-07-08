@@ -1,2 +1,10 @@
-﻿  Renderer.cpp
-  console_game.vcxproj -> C:\Users\MrBombastique\source\repos\console_game\Debug\console_game.exe
+﻿  Frame_assembler.cpp
+  Garbage_collector.cpp
+  GCElement.cpp
+  IAssembler.cpp
+  main.cpp
+C:\Users\Terence\source\repos\terminal_game\console_game\console_game\main.cpp(37,18): warning C4101: 'rows': unreferenced local variable
+C:\Users\Terence\source\repos\terminal_game\console_game\console_game\main.cpp(37,9): warning C4101: 'columns': unreferenced local variable
+C:\Users\Terence\source\repos\terminal_game\console_game\console_game\main.cpp(36,32): warning C4101: 'csbi': unreferenced local variable
+  Generating Code...
+  console_game.vcxproj -> C:\Users\Terence\Source\Repos\terminal_game\console_game\Debug\console_game.exe

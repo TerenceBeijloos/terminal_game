@@ -92,6 +92,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>8194304 </StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -108,6 +109,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <StackReserveSize>8194304 </StackReserveSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -139,18 +141,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Field.cpp" />
+    <ClCompile Include="Frame.cpp" />
+    <ClCompile Include="Assembler.cpp" />
+    <ClCompile Include="Garbage_collector.cpp" />
+    <ClCompile Include="GCElement.cpp" />
+    <ClCompile Include="IAssembler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="Texture_loader.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Defines.h" />
+    <ClInclude Include="Field.h" />
+    <ClInclude Include="Frame.h" />
+    <ClInclude Include="Assembler.h" />
+    <ClInclude Include="Garbage_collector.h" />
+    <ClInclude Include="GCElement.h" />
+    <ClInclude Include="IAssembler.h" />
+    <ClInclude Include="IField_storage_type.h" />
+    <ClInclude Include="IFrame_type.h" />
+    <ClInclude Include="Map_types.h" />
+    <ClInclude Include="Player_frames.h" />
     <ClInclude Include="Renderer.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="Texture_loader.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="character.txt" />
+    <Text Include="test.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.odt" />
+    <None Include="test.rtf" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

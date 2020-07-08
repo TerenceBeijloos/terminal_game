@@ -13,6 +13,27 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\GC">
+      <UniqueIdentifier>{9da67977-a1e2-4a6e-b78f-ba026021a925}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GC">
+      <UniqueIdentifier>{d535674d-bd4b-4674-98cb-81eca8a46c02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Assemblers">
+      <UniqueIdentifier>{aea5088f-69d1-4b9c-af11-fa52a30a50b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Assemblers">
+      <UniqueIdentifier>{421ba2c4-8677-4169-b79f-d097d14603d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Types">
+      <UniqueIdentifier>{79799af9-834d-4080-80d2-8da746caa890}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Sprites">
+      <UniqueIdentifier>{d63f7d0a-5ddf-457c-bc2b-935d06988260}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Defines">
+      <UniqueIdentifier>{f83d543f-8785-4dae-9d9f-11901d6f8c2c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,27 +42,77 @@
     <ClCompile Include="Renderer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Texture_loader.cpp">
+    <ClCompile Include="Frame.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
+    <ClCompile Include="Field.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Garbage_collector.cpp">
+      <Filter>Source Files\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="GCElement.cpp">
+      <Filter>Source Files\GC</Filter>
+    </ClCompile>
+    <ClCompile Include="IAssembler.cpp">
+      <Filter>Source Files\Assemblers</Filter>
+    </ClCompile>
+    <ClCompile Include="Assembler.cpp">
+      <Filter>Source Files\Assemblers</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Renderer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Texture_loader.h">
+    <ClInclude Include="Frame.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
+    <ClInclude Include="Field.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Garbage_collector.h">
+      <Filter>Header Files\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="GCElement.h">
+      <Filter>Header Files\GC</Filter>
+    </ClInclude>
+    <ClInclude Include="IAssembler.h">
+      <Filter>Header Files\Assemblers</Filter>
+    </ClInclude>
+    <ClInclude Include="Map_types.h">
+      <Filter>Header Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="Player_frames.h">
+      <Filter>Header Files\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="Assembler.h">
+      <Filter>Header Files\Assemblers</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>Header Files\Defines</Filter>
+    </ClInclude>
+    <ClInclude Include="IField_storage_type.h">
+      <Filter>Header Files\Types</Filter>
+    </ClInclude>
+    <ClInclude Include="IFrame_type.h">
+      <Filter>Header Files\Types</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="character.txt">
       <Filter>Resource Files</Filter>
     </Text>
+    <Text Include="test.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="test.rtf">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="test.odt">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

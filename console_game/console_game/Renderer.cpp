@@ -9,7 +9,7 @@
 void Renderer::set_cursor_position(int x, int y) const
 {
     std::cout.flush();
-    COORD coord = { (SHORT)x, (SHORT)y };
+    COORD coord = { (SHORT)x, (SHORT)(y - FIELD_HEIGHT) };
     SetConsoleCursorPosition(HOUT, coord);
 }
 
@@ -47,17 +47,17 @@ void Renderer::cls() const
     SetConsoleCursorPosition(HOUT, topLeft);
 }
 
-void Renderer::draw_thread()
+void Renderer::draw_thread(const Field& field)
 {
-    for (unsigned int x = 0; x < m_field.size(); x++)
+    for (unsigned int x = 0; x < field.size(); x++)
     {
         int runStart = -1;
-        for (unsigned int y = 0; y < m_field[0].size(); y++) {
-            if (m_field[x][y] == m_prev_field[x][y])
+        for (unsigned int y = 0; y < field[0].size(); y++) {
+            if (field[x][y] == m_prev_field[x][y])
             {
                 if (runStart != -1) {
                     this->set_cursor_position(runStart, x);
-                    std::cout.write(&m_field[x][runStart], (std::streamsize)y - runStart);
+                    std::cout.write(&field[x][runStart], (std::streamsize)y - runStart);
                     runStart = -1;
                 }
             }
@@ -67,12 +67,12 @@ void Renderer::draw_thread()
         }
         if (runStart != -1) {
             this->set_cursor_position(runStart, x);
-            std::cout.write(&m_field[x][runStart], (std::streamsize)m_field.size() - runStart);
+            std::cout.write(&field[x][runStart], (std::streamsize)field.size() - runStart);
         }
     }
 
     std::cout.flush();
-    m_prev_field = m_field;
+    m_prev_field = field;
 }
 
 void Renderer::full_screen()
@@ -82,22 +82,22 @@ void Renderer::full_screen()
 
 }
 
-void Renderer::set_field(const Field_type field)
+void Renderer::join()
 {
-    m_field = field;
+    if (m_Draw_thd.joinable())
+    {
+        m_Draw_thd.join();
+    }
 }
 
-void Renderer::draw(bool big_change)
+void Renderer::draw(const Field& field, bool big_change)
 {
+    m_Draw_thd = std::thread(&Renderer::draw_thread, this, field);
 }
 
 Renderer::Renderer(bool set_full_screen)
 {
-    for (unsigned int i = 0; i < m_field.size(); i++)
-    {
-        m_field[i].fill(' ');
-        m_prev_field[i].fill(' ');
-    }
+    m_prev_field.fill(' ');
 
     if (set_full_screen)
     {

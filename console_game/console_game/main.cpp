@@ -1,31 +1,16 @@
-#include <windows.h>
+﻿#include <windows.h>
 #include <iostream>
 #include <chrono>
 #include <thread>
+#include <sstream>
+#include <vector>
 
 #include "Renderer.h"
+#include "Frame.h"
 
 int main(int argc, char* argv[])
 {
-    CONSOLE_SCREEN_BUFFER_INFO csbi;
-    int columns, rows;
-
-
-    Renderer r;
-
-    //while (true)
-    //{
-    //    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-    //    columns = csbi.srWindow.Right - csbi.srWindow.Left + 1;
-    //    rows = csbi.srWindow.Bottom - csbi.srWindow.Top + 1;
-    //    printf("columns: %d\n", columns);
-    //    printf("rows: %d\n", rows);
-    //    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
-    //}
-    while (true)
-    {
-
-    }
+    
     return 0;
 }
 
